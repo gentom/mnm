@@ -12,6 +12,8 @@ defmodule Mnm.Endpoint do
 
   plug(:dispatch)
 
+  forward("/bot", to: Mnm.Router)
+
   match _ do
     send_resp(conn, 404, "Requested page not found!")
   end
